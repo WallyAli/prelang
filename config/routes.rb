@@ -1,4 +1,5 @@
 Prelang::Application.routes.draw do
+  get "landings/index"
   resources :parents
 
   resources :children
