@@ -1,4 +1,5 @@
 ActiveAdmin.register Parent do
+  permit_params :first_name, :last_name, :case_number, :address, :city, :state, :zipcode, :email, :phone
 
   
   # See permitted parameters documentation:
