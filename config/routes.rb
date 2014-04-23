@@ -1,4 +1,6 @@
 Prelang::Application.routes.draw do
+  resources :children
+
   resources :attendances
 
   resources :schedules
