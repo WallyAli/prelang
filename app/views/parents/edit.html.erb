@@ -1,6 +1,5 @@
-<h1>Editing parent</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @parent %> |
-<%= link_to 'Back', parents_path %>
+<%- model_class = Parent -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Parent %></h1>
+</div>
+<%= render :partial => 'form' %>
