@@ -1,33 +1,28 @@
-<%= form_for(@attendance) do |f| %>
-  <% if @attendance.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
-
-      <ul>
-      <% @attendance.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @attendance, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :date, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :time_in, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :time_in, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :time_out, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :time_out, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </div>
-  <div class="field">
-    <%= f.label :time_in %><br>
-    <%= f.datetime_select :time_in %>
-  </div>
-  <div class="field">
-    <%= f.label :time_out %><br>
-    <%= f.datetime_select :time_out %>
-  </div>
-  <div class="field">
-    <%= f.label :child_id %><br>
-    <%= f.text_field :child_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  attendances_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
