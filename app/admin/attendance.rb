@@ -1,4 +1,5 @@
 ActiveAdmin.register Attendance do
+  permit_params :date, :time_in, :time_out
 
   
   # See permitted parameters documentation:
